@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_blog_preview_sections",
+  "info": {
+    "displayName": "Blog Preview Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "blog_posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog-post.blog-post"
+    }
+  },
+  "config": {}
+}

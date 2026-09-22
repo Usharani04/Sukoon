@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_mentions",
+  "info": {
+    "singularName": "media-mention",
+    "pluralName": "media-mentions",
+    "displayName": "MEDIA MENTION"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "publication_name": {
+      "type": "string",
+      "required": true
+    },
+    "article_url": {
+      "type": "string"
+    },
+    "published_date": {
+      "type": "string"
+    }
+  }
+}

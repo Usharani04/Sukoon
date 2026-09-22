@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_elements_badges",
+  "info": {
+    "displayName": "Badge",
+    "icon": "award"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

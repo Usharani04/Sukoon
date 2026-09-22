@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_sections_emergency_sections",
+  "info": {
+    "displayName": "Emergency Section (MERA)",
+    "icon": "phone"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "icon_features": {
+      "type": "component",
+      "component": "elements.icon-feature",
+      "repeatable": true
+    },
+    "cta": {
+      "type": "component",
+      "component": "elements.cta-button",
+      "repeatable": false
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "disclaimer": {
+      "type": "text"
+    }
+  }
+}

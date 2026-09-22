@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_locations_sections",
+  "info": {
+    "displayName": "Locations Section",
+    "icon": "pin"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::location.location"
+    }
+  }
+}

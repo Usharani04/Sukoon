@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_team_sections",
+  "info": {
+    "displayName": "Team Section",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "subheading": {
+      "type": "text"
+    },
+    "featured_doctors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::doctor.doctor"
+    }
+  }
+}

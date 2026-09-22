@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_testimonial_sections",
+  "info": {
+    "displayName": "Testimonial Section",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "badge": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "youtube_url": {
+      "type": "string"
+    }
+  }
+}

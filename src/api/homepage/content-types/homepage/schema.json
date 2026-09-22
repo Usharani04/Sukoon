@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "HOMEPAGE"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "elements.seo",
+      "repeatable": false
+    },
+    "page_builder": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.hero-section",
+        "sections.about-section",
+        "sections.treatment-model-section",
+        "sections.emergency-section",
+        "sections.locations-section",
+        "sections.team-section",
+        "sections.insurance-section",
+        "sections.testimonial-section",
+        "sections.faq-section",
+        "sections.contact-form-section",
+        "sections.care-pathways-section",
+        "sections.condition-cards-section",
+        "sections.recovery-stories-section",
+        "sections.blog-preview-section"
+      ]
+    }
+  }
+}

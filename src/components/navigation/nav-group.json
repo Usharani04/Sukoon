@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_navigation_nav_groups",
+  "info": {
+    "displayName": "nav-group"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "heading_url": {
+      "type": "string"
+    },
+    "links": {
+      "type": "component",
+      "component": "navigation.nav-link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

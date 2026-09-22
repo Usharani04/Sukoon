@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_elements_condition_cards",
+  "info": {
+    "displayName": "Condition Card",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

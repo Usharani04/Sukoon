@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_sections_treatment_model_sections",
+  "info": {
+    "displayName": "Treatment Model Section",
+    "icon": "heart"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "cta": {
+      "type": "component",
+      "component": "elements.cta-button",
+      "repeatable": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "models": {
+      "type": "component",
+      "component": "elements.model-card",
+      "repeatable": true
+    },
+    "banner_heading": {
+      "type": "string"
+    },
+    "banner_button_label": {
+      "type": "string"
+    },
+    "banner_button_url": {
+      "type": "string"
+    }
+  }
+}

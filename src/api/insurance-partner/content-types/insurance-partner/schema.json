@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "insurance_partners",
+  "info": {
+    "singularName": "insurance-partner",
+    "pluralName": "insurance-partners",
+    "displayName": "INSURANCE PARTNER"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "website_url": {
+      "type": "string"
+    }
+  }
+}

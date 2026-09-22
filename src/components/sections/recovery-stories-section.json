@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_recovery_stories_sections",
+  "info": {
+    "displayName": "Recovery Stories Section"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "testimonials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonial.testimonial"
+    }
+  },
+  "config": {}
+}

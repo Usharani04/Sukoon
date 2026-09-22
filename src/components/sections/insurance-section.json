@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_insurance_sections",
+  "info": {
+    "displayName": "Insurance Section",
+    "icon": "shield"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "partners": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::insurance-partner.insurance-partner"
+    },
+    "badge": {
+      "type": "string"
+    }
+  }
+}

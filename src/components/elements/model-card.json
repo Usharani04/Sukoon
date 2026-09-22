@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_elements_model_cards",
+  "info": {
+    "displayName": "Model Card",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "model_name": {
+      "type": "string",
+      "required": true
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "button_label": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    }
+  }
+}

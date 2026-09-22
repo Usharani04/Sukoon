@@ -1,0 +1,134 @@
+{
+  "kind": "singleType",
+  "collectionName": "globals",
+  "info": {
+    "singularName": "global",
+    "pluralName": "globals",
+    "displayName": "GLOBAL"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "site_name": {
+      "type": "string",
+      "default": "Sukoon Health"
+    },
+    "primary_phone": {
+      "type": "string",
+      "default": "+91 8448156500"
+    },
+    "secondary_phone": {
+      "type": "string",
+      "default": "+91 1244265238"
+    },
+    "whatsapp_number": {
+      "type": "string",
+      "default": "+91 8448156500"
+    },
+    "admissions_email": {
+      "type": "email",
+      "default": "admissions@sukoonhealth.com"
+    },
+    "company_legal_name": {
+      "type": "string",
+      "default": "SUKOON HEALTHCARE SERVICES PRIVATE LIMITED"
+    },
+    "cin_number": {
+      "type": "string",
+      "default": "U85110DL2019PTC352490"
+    },
+    "registered_address": {
+      "type": "text"
+    },
+    "copyright_text": {
+      "type": "string"
+    },
+    "nav_links": {
+      "type": "component",
+      "component": "elements.nav-link",
+      "repeatable": true
+    },
+    "footer_columns": {
+      "type": "component",
+      "component": "elements.footer-column",
+      "repeatable": true
+    },
+    "social_links": {
+      "type": "component",
+      "component": "elements.social-link",
+      "repeatable": true
+    },
+    "default_cta": {
+      "type": "component",
+      "component": "elements.cta-button",
+      "repeatable": false
+    },
+    "seo_defaults": {
+      "type": "component",
+      "component": "elements.seo",
+      "repeatable": false
+    },
+    "contact_eyebrow": {
+      "type": "string"
+    },
+    "contact_heading": {
+      "type": "string"
+    },
+    "contact_description": {
+      "type": "text"
+    },
+    "call_label": {
+      "type": "string"
+    },
+    "email_label": {
+      "type": "string"
+    },
+    "form_eyebrow": {
+      "type": "string"
+    },
+    "form_heading": {
+      "type": "string"
+    },
+    "form_name_label": {
+      "type": "string"
+    },
+    "form_name_placeholder": {
+      "type": "string"
+    },
+    "form_phone_label": {
+      "type": "string"
+    },
+    "form_phone_placeholder": {
+      "type": "string"
+    },
+    "form_city_label": {
+      "type": "string"
+    },
+    "form_message_label": {
+      "type": "string"
+    },
+    "form_cities": {
+      "type": "json"
+    },
+    "form_message_placeholder": {
+      "type": "string"
+    },
+    "form_button_label": {
+      "type": "string"
+    },
+    "form_footnote": {
+      "type": "string"
+    },
+    "form_success_message": {
+      "type": "string"
+    },
+    "form_error_message": {
+      "type": "string"
+    },
+    "footer_description": {
+      "type": "string"
+    }
+  }
+}
