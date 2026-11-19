@@ -20,6 +20,9 @@
     },
     "category": {
       "type": "string"
+    },
+    "answer_rich": {
+      "type": "blocks"
     }
   }
 }

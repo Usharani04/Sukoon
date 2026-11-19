@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_elements_city_cards",
+  "info": {
+    "displayName": "City Card",
+    "icon": "pinMap",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.cta-button",
+      "required": true
+    }
+  }
+}

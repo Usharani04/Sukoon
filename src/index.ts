@@ -11,7 +11,7 @@ export default {
       });
 
       if (publicRole) {
-        const apis = ['global', 'homepage', 'location', 'doctor', 'service', 'disorder', 'faq', 'testimonial', 'insurance-partner', 'blog-post', 'media-mention'];
+        const apis = ['global', 'homepage', 'location', 'doctor', 'service', 'disorder', 'faq', 'testimonial', 'insurance-partner', 'blog-post', 'media-mention', 'landing-page', 'expert-video'];
         const actionsToEnable: string[] = [];
 
         apis.forEach((api) => {

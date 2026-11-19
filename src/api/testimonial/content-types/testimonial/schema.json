@@ -41,6 +41,10 @@
     },
     "organization": {
       "type": "string"
+    },
+    "consent_confirmed": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

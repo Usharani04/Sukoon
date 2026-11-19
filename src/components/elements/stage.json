@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_elements_stages",
+  "info": {
+    "displayName": "Stage",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "bullets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.list-item"
+    }
+  }
+}

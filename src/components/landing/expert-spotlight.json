@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_landing_expert_spotlights",
+  "info": {
+    "displayName": "Expert Spotlight",
+    "icon": "play",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "video_title": {
+      "type": "string"
+    },
+    "video_url": {
+      "type": "string",
+      "required": true
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "quote": {
+      "type": "text"
+    },
+    "expert": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::doctor.doctor"
+    }
+  }
+}

@@ -559,6 +559,7 @@ export interface ApiDoctorDoctor extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    designation: Schema.Attribute.String;
     experience_years: Schema.Attribute.Integer;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -567,6 +568,7 @@ export interface ApiDoctorDoctor extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    photo: Schema.Attribute.Media<'images'>;
     publishedAt: Schema.Attribute.DateTime;
     qualifications: Schema.Attribute.String;
     role: Schema.Attribute.Enumeration<
@@ -589,6 +591,40 @@ export interface ApiDoctorDoctor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiExpertVideoExpertVideo extends Struct.CollectionTypeSchema {
+  collectionName: 'expert_videos';
+  info: {
+    description: '';
+    displayName: 'Expert Video';
+    pluralName: 'expert-videos';
+    singularName: 'expert-video';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::expert-video.expert-video'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    speaker: Schema.Attribute.Relation<'manyToOne', 'api::doctor.doctor'>;
+    summary: Schema.Attribute.Text;
+    thumbnail: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    youtube_url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -601,6 +637,7 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   };
   attributes: {
     answer: Schema.Attribute.Text & Schema.Attribute.Required;
+    answer_rich: Schema.Attribute.Blocks;
     category: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -760,6 +797,70 @@ export interface ApiInsurancePartnerInsurancePartner
   };
 }
 
+export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
+  collectionName: 'landing_pages';
+  info: {
+    description: '';
+    displayName: 'Landing Page';
+    pluralName: 'landing-pages';
+    singularName: 'landing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    approval_status: Schema.Attribute.Enumeration<
+      ['draft', 'ready_for_review', 'approved']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'draft'>;
+    breadcrumb_label: Schema.Attribute.String;
+    content_owner: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    last_reviewed_on: Schema.Attribute.Date;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::landing-page.landing-page'
+    > &
+      Schema.Attribute.Private;
+    page_builder: Schema.Attribute.DynamicZone<
+      [
+        'landing.hero',
+        'landing.feature-cards',
+        'landing.city-cards',
+        'landing.concern-list',
+        'landing.steps',
+        'landing.expert-spotlight',
+        'landing.image-gallery',
+        'landing.process-stages',
+        'landing.video-embed',
+        'landing.video-list',
+        'landing.testimonials',
+        'landing.faq',
+        'landing.cta-banner',
+      ]
+    >;
+    page_purpose: Schema.Attribute.Text;
+    page_type: Schema.Attribute.Enumeration<
+      ['landing', 'service', 'about', 'listing', 'detail', 'blog', 'contact']
+    > &
+      Schema.Attribute.DefaultTo<'landing'>;
+    primary_action: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    reference_design_url: Schema.Attribute.String;
+    seo: Schema.Attribute.Component<'elements.seo', false>;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    target_audience: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
   collectionName: 'locations';
   info: {
@@ -867,6 +968,8 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   };
   attributes: {
     badge: Schema.Attribute.String;
+    consent_confirmed: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1406,10 +1509,12 @@ declare module '@strapi/strapi' {
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::disorder.disorder': ApiDisorderDisorder;
       'api::doctor.doctor': ApiDoctorDoctor;
+      'api::expert-video.expert-video': ApiExpertVideoExpertVideo;
       'api::faq.faq': ApiFaqFaq;
       'api::global.global': ApiGlobalGlobal;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::insurance-partner.insurance-partner': ApiInsurancePartnerInsurancePartner;
+      'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::location.location': ApiLocationLocation;
       'api::media-mention.media-mention': ApiMediaMentionMediaMention;
       'api::service.service': ApiServiceService;

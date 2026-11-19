@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "expert_videos",
+  "info": {
+    "singularName": "expert-video",
+    "pluralName": "expert-videos",
+    "displayName": "Expert Video",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "youtube_url": {
+      "type": "string",
+      "required": true
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "speaker": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::doctor.doctor"
+    },
+    "summary": {
+      "type": "text"
+    }
+  }
+}

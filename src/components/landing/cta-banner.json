@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_landing_cta_banners",
+  "info": {
+    "displayName": "CTA Banner",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "points": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.list-item"
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.cta-button",
+      "required": true
+    },
+    "style": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark",
+        "brand"
+      ],
+      "default": "brand"
+    }
+  }
+}
