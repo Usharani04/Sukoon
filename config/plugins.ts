@@ -1,3 +1,4 @@
+// OPTIONAL (guide step B4): full replacement for config/plugins.ts — your file + Cloudinary provider.
 import type { Core } from '@strapi/strapi';
 
 const allowedMediaTypes = [
@@ -34,6 +35,19 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
   },
   upload: {
     config: {
+      // NEW: store uploads on Cloudinary (Render's disk is wiped on each deploy).
+      // npm i @strapi/provider-upload-cloudinary · Render env: CLOUDINARY_NAME, CLOUDINARY_KEY, CLOUDINARY_SECRET
+      provider: 'cloudinary',
+      providerOptions: {
+        cloud_name: env('CLOUDINARY_NAME'),
+        api_key: env('CLOUDINARY_KEY'),
+        api_secret: env('CLOUDINARY_SECRET'),
+      },
+      actionOptions: {
+        upload: {},
+        uploadStream: {},
+        delete: {},
+      },
       security: {
         allowedTypes: allowedMediaTypes,
         deniedTypes,
