@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_landing_process_stagess",
+  "info": {
+    "displayName": "Process Stages",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "subheading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "stages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.stage",
+      "required": true
+    },
+    "download_label": {
+      "type": "string"
+    },
+    "download_file": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

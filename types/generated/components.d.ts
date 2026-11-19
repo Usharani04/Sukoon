@@ -29,6 +29,22 @@ export interface ElementsCareCard extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsCityCard extends Struct.ComponentSchema {
+  collectionName: 'components_elements_city_cards';
+  info: {
+    description: '';
+    displayName: 'City Card';
+    icon: 'pinMap';
+  };
+  attributes: {
+    city: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    link: Schema.Attribute.Component<'elements.cta-button', false> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ElementsConditionCard extends Struct.ComponentSchema {
   collectionName: 'components_elements_condition_cards';
   info: {
@@ -58,6 +74,20 @@ export interface ElementsCtaButton extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsFeatureCard extends Struct.ComponentSchema {
+  collectionName: 'components_elements_feature_cards';
+  info: {
+    description: '';
+    displayName: 'Feature Card';
+    icon: 'dashboard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ElementsFooterColumn extends Struct.ComponentSchema {
   collectionName: 'components_elements_footer_columns';
   info: {
@@ -79,6 +109,18 @@ export interface ElementsIconFeature extends Struct.ComponentSchema {
   attributes: {
     icon: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ElementsListItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_list_items';
+  info: {
+    description: '';
+    displayName: 'List Item';
+    icon: 'bulletList';
+  };
+  attributes: {
+    text: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -117,9 +159,16 @@ export interface ElementsSeo extends Struct.ComponentSchema {
     icon: 'search';
   };
   attributes: {
+    canonical_url: Schema.Attribute.String;
+    keywords: Schema.Attribute.Text;
     meta_description: Schema.Attribute.Text;
     meta_title: Schema.Attribute.String;
+    og_description: Schema.Attribute.Text;
     og_image: Schema.Attribute.Media<'images'>;
+    og_title: Schema.Attribute.String;
+    robots_follow: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    robots_index: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    schema_json: Schema.Attribute.JSON;
   };
 }
 
@@ -138,6 +187,20 @@ export interface ElementsSocialLink extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsStage extends Struct.ComponentSchema {
+  collectionName: 'components_elements_stages';
+  info: {
+    description: '';
+    displayName: 'Stage';
+    icon: 'layer';
+  };
+  attributes: {
+    bullets: Schema.Attribute.Component<'elements.list-item', true>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ElementsStatItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_stat_items';
   info: {
@@ -148,6 +211,230 @@ export interface ElementsStatItem extends Struct.ComponentSchema {
     label: Schema.Attribute.String & Schema.Attribute.Required;
     number: Schema.Attribute.String & Schema.Attribute.Required;
     sublabel: Schema.Attribute.String;
+  };
+}
+
+export interface LandingCityCards extends Struct.ComponentSchema {
+  collectionName: 'components_landing_city_cardss';
+  info: {
+    description: '';
+    displayName: 'City Cards';
+    icon: 'pinMap';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'elements.city-card', true> &
+      Schema.Attribute.Required;
+    cta: Schema.Attribute.Component<'elements.cta-button', false>;
+    cta_heading: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface LandingConcernList extends Struct.ComponentSchema {
+  collectionName: 'components_landing_concern_lists';
+  info: {
+    description: '';
+    displayName: 'Concern List';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    items: Schema.Attribute.Component<'elements.list-item', true> &
+      Schema.Attribute.Required;
+    link: Schema.Attribute.Component<'elements.cta-button', false>;
+  };
+}
+
+export interface LandingCtaBanner extends Struct.ComponentSchema {
+  collectionName: 'components_landing_cta_banners';
+  info: {
+    description: '';
+    displayName: 'CTA Banner';
+    icon: 'cursor';
+  };
+  attributes: {
+    buttons: Schema.Attribute.Component<'elements.cta-button', true> &
+      Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    points: Schema.Attribute.Component<'elements.list-item', true>;
+    style: Schema.Attribute.Enumeration<['light', 'dark', 'brand']> &
+      Schema.Attribute.DefaultTo<'brand'>;
+  };
+}
+
+export interface LandingExpertSpotlight extends Struct.ComponentSchema {
+  collectionName: 'components_landing_expert_spotlights';
+  info: {
+    description: '';
+    displayName: 'Expert Spotlight';
+    icon: 'play';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    expert: Schema.Attribute.Relation<'oneToOne', 'api::doctor.doctor'>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    quote: Schema.Attribute.Text;
+    thumbnail: Schema.Attribute.Media<'images'>;
+    video_title: Schema.Attribute.String;
+    video_url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface LandingFaq extends Struct.ComponentSchema {
+  collectionName: 'components_landing_faqs';
+  info: {
+    description: '';
+    displayName: 'FAQ';
+    icon: 'question';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    output_schema: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+  };
+}
+
+export interface LandingFeatureCards extends Struct.ComponentSchema {
+  collectionName: 'components_landing_feature_cardss';
+  info: {
+    description: '';
+    displayName: 'Feature Cards';
+    icon: 'apps';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'elements.feature-card', true> &
+      Schema.Attribute.Required;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface LandingHero extends Struct.ComponentSchema {
+  collectionName: 'components_landing_heros';
+  info: {
+    description: '';
+    displayName: 'Hero';
+    icon: 'layout';
+  };
+  attributes: {
+    background_image: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    description: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String;
+    mobile_image: Schema.Attribute.Media<'images'>;
+    primary_cta: Schema.Attribute.Component<'elements.cta-button', false>;
+    reviewer: Schema.Attribute.Relation<'oneToOne', 'api::doctor.doctor'>;
+    reviewer_label: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Clinically reviewed by'>;
+    secondary_cta: Schema.Attribute.Component<'elements.cta-button', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface LandingImageGallery extends Struct.ComponentSchema {
+  collectionName: 'components_landing_image_gallerys';
+  info: {
+    description: '';
+    displayName: 'Image Gallery';
+    icon: 'picture';
+  };
+  attributes: {
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    images: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+    subheading: Schema.Attribute.String;
+  };
+}
+
+export interface LandingProcessStages extends Struct.ComponentSchema {
+  collectionName: 'components_landing_process_stagess';
+  info: {
+    description: '';
+    displayName: 'Process Stages';
+    icon: 'layer';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    download_file: Schema.Attribute.Media<'files'>;
+    download_label: Schema.Attribute.String;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    stages: Schema.Attribute.Component<'elements.stage', true> &
+      Schema.Attribute.Required;
+    subheading: Schema.Attribute.String;
+  };
+}
+
+export interface LandingSteps extends Struct.ComponentSchema {
+  collectionName: 'components_landing_stepss';
+  info: {
+    description: '';
+    displayName: 'Steps';
+    icon: 'numberList';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    steps: Schema.Attribute.Component<'elements.feature-card', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface LandingTestimonials extends Struct.ComponentSchema {
+  collectionName: 'components_landing_testimonialss';
+  info: {
+    description: '';
+    displayName: 'Testimonials';
+    icon: 'quote';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    testimonials: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonial.testimonial'
+    >;
+  };
+}
+
+export interface LandingVideoEmbed extends Struct.ComponentSchema {
+  collectionName: 'components_landing_video_embeds';
+  info: {
+    description: '';
+    displayName: 'Video Embed';
+    icon: 'play';
+  };
+  attributes: {
+    eyebrow: Schema.Attribute.String;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    poster: Schema.Attribute.Media<'images'>;
+    start_seconds: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+    transcript: Schema.Attribute.Text;
+    video_url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface LandingVideoList extends Struct.ComponentSchema {
+  collectionName: 'components_landing_video_lists';
+  info: {
+    description: '';
+    displayName: 'Video List';
+    icon: 'play';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    videos: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::expert-video.expert-video'
+    >;
   };
 }
 
@@ -395,15 +682,32 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'elements.badge': ElementsBadge;
       'elements.care-card': ElementsCareCard;
+      'elements.city-card': ElementsCityCard;
       'elements.condition-card': ElementsConditionCard;
       'elements.cta-button': ElementsCtaButton;
+      'elements.feature-card': ElementsFeatureCard;
       'elements.footer-column': ElementsFooterColumn;
       'elements.icon-feature': ElementsIconFeature;
+      'elements.list-item': ElementsListItem;
       'elements.model-card': ElementsModelCard;
       'elements.nav-link': ElementsNavLink;
       'elements.seo': ElementsSeo;
       'elements.social-link': ElementsSocialLink;
+      'elements.stage': ElementsStage;
       'elements.stat-item': ElementsStatItem;
+      'landing.city-cards': LandingCityCards;
+      'landing.concern-list': LandingConcernList;
+      'landing.cta-banner': LandingCtaBanner;
+      'landing.expert-spotlight': LandingExpertSpotlight;
+      'landing.faq': LandingFaq;
+      'landing.feature-cards': LandingFeatureCards;
+      'landing.hero': LandingHero;
+      'landing.image-gallery': LandingImageGallery;
+      'landing.process-stages': LandingProcessStages;
+      'landing.steps': LandingSteps;
+      'landing.testimonials': LandingTestimonials;
+      'landing.video-embed': LandingVideoEmbed;
+      'landing.video-list': LandingVideoList;
       'navigation.nav-group': NavigationNavGroup;
       'navigation.nav-item': NavigationNavItem;
       'navigation.nav-link': NavigationNavLink;

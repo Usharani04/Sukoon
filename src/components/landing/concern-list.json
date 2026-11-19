@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_landing_concern_lists",
+  "info": {
+    "displayName": "Concern List",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.list-item",
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.cta-button"
+    }
+  }
+}

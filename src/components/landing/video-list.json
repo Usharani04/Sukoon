@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_landing_video_lists",
+  "info": {
+    "displayName": "Video List",
+    "icon": "play",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::expert-video.expert-video"
+    }
+  }
+}

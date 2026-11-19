@@ -42,6 +42,17 @@
     },
     "bio": {
       "type": "text"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

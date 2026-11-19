@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_landing_faqs",
+  "info": {
+    "displayName": "FAQ",
+    "icon": "question",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
+    },
+    "output_schema": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

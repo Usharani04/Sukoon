@@ -19,6 +19,29 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "canonical_url": {
+      "type": "string"
+    },
+    "robots_index": {
+      "type": "boolean",
+      "default": true
+    },
+    "robots_follow": {
+      "type": "boolean",
+      "default": true
+    },
+    "og_title": {
+      "type": "string"
+    },
+    "og_description": {
+      "type": "text"
+    },
+    "schema_json": {
+      "type": "json"
+    },
+    "keywords": {
+      "type": "text"
     }
   }
 }

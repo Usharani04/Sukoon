@@ -1,0 +1,56 @@
+{
+  "collectionName": "components_landing_heros",
+  "info": {
+    "displayName": "Hero",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "background_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "mobile_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "primary_cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.cta-button"
+    },
+    "secondary_cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.cta-button"
+    },
+    "reviewer_label": {
+      "type": "string",
+      "default": "Clinically reviewed by"
+    },
+    "reviewer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::doctor.doctor"
+    }
+  }
+}

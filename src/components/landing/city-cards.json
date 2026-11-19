@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_landing_city_cardss",
+  "info": {
+    "displayName": "City Cards",
+    "icon": "pinMap",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.city-card",
+      "required": true
+    },
+    "cta_heading": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.cta-button"
+    }
+  }
+}

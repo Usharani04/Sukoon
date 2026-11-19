@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_landing_video_embeds",
+  "info": {
+    "displayName": "Video Embed",
+    "icon": "play",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "video_url": {
+      "type": "string",
+      "required": true
+    },
+    "start_seconds": {
+      "type": "integer",
+      "min": 0
+    },
+    "poster": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "transcript": {
+      "type": "text"
+    }
+  }
+}
